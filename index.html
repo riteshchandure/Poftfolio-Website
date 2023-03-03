@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="header">
+		<div class="container">
+			<nav>
+				<img src="logo.png" class="logo">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="header-text">
+				<p>Fron-End Devloper</p>
+				<h1>Hi, I'm <span>Ritesh</span><br>Chandure From India</h1>
+			</div>
+		</div>
+	</div>
+	<!----------------about---------->
+	<div id="about">
+		<div class="container">
+			<div class="row">
+				<div class="about-col-1">
+					<img src="user.jpg">
+				</div>
+				<div class="about-col-2">
+					<h1 class="sub-titile">About Me</h1>
+					<p>
+						Hello sir, I am currently pursuing my Btech degree in engineering from P.R.Pote College Of
+						Engineering & Management Amravati. Now i want switch my career in Web or App Devlopment. i have
+						the good knowlege about Front-end.</p>
+
+					<div class="tab-titles">
+						<p class="tab-links active-link" onclick="opentab('skills')" name="skills">Skills</p>
+						<p class=" tab-links" onclick="opentab('education')" name="education">Education</p>
+						<p class="tab-links" onclick="opentab('Project')" name="Project">Project</p>
+					</div>
+					<div class="tab-contents active tab" id="skills">
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>Javascript</li>
+							<li>Ionic Angular Framework</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="education">
+						<ul>
+							<li><span>2021 - Present</span><br>B.Tech (Mechancial Engineering) at PRPCEM Amravati</li>
+							<li><span>2016 - 2020</span><br>Diploma in Mechanical Engineering at MSBTE Board</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var tablinks = document.querySelectorAll("tab-links");
+		var tabcontents = document.querySelectorAll("tab-contents");
+
+		function opentab(tabname) {
+			for (tablink of tablinks) {
+				console.log(tablink)
+				tablink.name !== tabname && tablink.classList.remove("active-link");
+			}
+			for (tabcontent of tabcontents) {
+				tabcontent.id === tabname && tabcontent.classList.add("active-tab")
+
+				tabcontent.id !== tabname &&  tabcontent.classList.remove("active-tab");
+			}
+			event.currentTarget.classList.add("active-link")
+		}
+	</script>
+</body>
+
+</html>
